@@ -14,7 +14,7 @@ contract Doc is ERC721URIStorage {
     Counters.Counter private _tokenIdCounter;
     mapping(address => user) public users;
 
-    constructor() ERC721("Certified Ethical Developers", "CED") {
+    constructor() ERC721("Docu Track Open Test", "DUT") {
         users[msg.sender].curruser = msg.sender;
     }
 
@@ -29,7 +29,7 @@ contract Doc is ERC721URIStorage {
     {
         // console.log(msg.sender);
         console.log("check ID exist: ", users[newowner].tokenid);
-        if (tx.origin == msg.sender && users[newowner].tokenid == 0) {
+        if (users[newowner].tokenid == 0) { // allow all user
             _tokenIdCounter.increment();
 
             uint256 newItemId = _tokenIdCounter.current();
@@ -51,12 +51,8 @@ contract Doc is ERC721URIStorage {
     function mintVerify(address newowner) public view returns (uint256){
         return users[newowner].tokenid;
     }
-    function entity() public view returns (uint256){
+    function entity() public view returns (uint256){ // allow all users mint
         console.log(users[msg.sender].curruser);
-        if (tx.origin == users[msg.sender].curruser){
-            return 5;
-        }else {
-            return 1337;
-        }
+        return 5;
     }
 }
