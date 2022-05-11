@@ -37,7 +37,7 @@ function App() {
   // const handleClose = () => setModalOpen(false);
 
   const contractABI = abi.abi;
-  const contractAddress = "0x3a3749c23a8BFDAa56A4527FeF25d3C968959003";
+  const contractAddress = "0x0a527Eb5F7B4875d3aa264a92b9FD33F0c9D4D5a";
 
   useEffect(() => {
     checkifWalletisConnected();
