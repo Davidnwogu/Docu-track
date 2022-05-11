@@ -11,7 +11,7 @@ export default function Navbar({ verify }) {
             <AppBar sx={{ background: '#162748' }} position="sticky">
                 <Toolbar>
                     <Typography sx={{ flexGrow: 1 }} variant="h5" component="h1" gutterBottom>
-                        Certified Ethical Developers
+                        Docu Track Open Demo
                     </Typography>
                     <Button variant="contained" onClick={verify} sx={{ background: '#E88547' }}>Show my NFT</Button>
                 </Toolbar>
